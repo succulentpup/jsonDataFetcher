@@ -11,7 +11,7 @@ const printFetchedData = (fetchedData) =>
   fetchedData.forEach((dataObj) => {
     const url = Object.keys(dataObj)[0];
     let data = dataObj[url];
-    console.log(`$url: ${url}: ${JSON.stringify(data)} `);
+    console.log(`$url: ${url}: ${JSON.stringify(data, null, 1)} `);
   });
 
 const fetchData = async (listOfUrls) => {
@@ -42,7 +42,7 @@ const fetchData = async (listOfUrls) => {
       });
   }
   // this is to manually test the fetched data
-  // printFetchedData(fetchedData);
+  printFetchedData(fetchedData);
   return fetchedData;
 };
 
