@@ -1,0 +1,23 @@
+{
+  "name": "jsondatafetcher",
+  "version": "1.0.0",
+  "description": "fetches json data from the given list of endpoints",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/succulentpup/jsonDataFetcher.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/succulentpup/jsonDataFetcher/issues"
+  },
+  "homepage": "https://github.com/succulentpup/jsonDataFetcher#readme",
+  "dependencies": {
+    "got": "^11.8.2",
+    "lodash.chunk": "^4.2.0"
+  }
+}
