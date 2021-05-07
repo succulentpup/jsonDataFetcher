@@ -7,6 +7,11 @@ const { isValidHttpUrl } = require('./helpers/isValidHttpUrl');
 const { MAX_BATCH_REQ_SIZE = 50 } = process.env;
 console.log('MAX_BATCH_REQ_SIZE', MAX_BATCH_REQ_SIZE);
 
+/**
+ *
+ * @desc Prints the fetched data on console
+ * @param fetchedData
+ */
 const printFetchedData = (fetchedData) =>
   fetchedData.forEach((dataObj) => {
     const url = Object.keys(dataObj)[0];
@@ -14,6 +19,16 @@ const printFetchedData = (fetchedData) =>
     console.log(`$url: ${url}: ${JSON.stringify(data, null, 1)} `);
   });
 
+/**
+ *
+ * @desc  Expects a list of Urls and returns a promise that consists an array of json objects.
+ *        This json objects are the fetched data from the given list of valid Urls
+ * @param listOfUrls eg: ['https://ft-tech-test-example.s3-eu-west-1.amazonaws.com/ftse-fsi.json',
+                           'https://ft-tech-test-example.s3-eu-west-1.amazonaws.com/gbp-hkd.json',]
+ * @return {Promise<*[]>} eg: [ https://domain.com/abc.json: {key1: value1, ...},
+ *                              https://domain1.com/xyz.json: {keyN: valueN,...}]
+ *
+ */
 const fetchData = async (listOfUrls) => {
   console.log({ listOfUrls }, 'listOfUrls'); // debug log
   const validListOfHttpUrls = listOfUrls.filter(isValidHttpUrl);
